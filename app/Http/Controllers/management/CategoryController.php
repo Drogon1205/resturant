@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\management;
+namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Category extends Controller
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class Category extends Controller
      */
     public function index()
     {
-        //
+        return view('management.createCategory');
     }
 
     /**
@@ -24,7 +25,7 @@ class Category extends Controller
      */
     public function create()
     {
-        //
+        return view('management.CreateNewCatrgoty');
     }
 
     /**
