@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\categoryModel;
 
 class CategoryController extends Controller
 {
@@ -36,7 +36,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'cat' => 'required',
+        ]);
+
+
+        $mod_cat=new categoryModel;
+        $mod_cat->name=$request->cat;
+        $mod_cat->save();
+        return view('management.CreateNewCatrgoty');
     }
 
     /**

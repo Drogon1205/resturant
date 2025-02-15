@@ -21,10 +21,19 @@
             </div>
 
             <div class="card-body">
-                <form action="">
-
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+                <form action="/Management/Category" method="POST">
+                    @csrf
                     <label for="">New category</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="cat">
                     <br>
                     <input type="submit" class="btn btn-danger">
                 </form>
